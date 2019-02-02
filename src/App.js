@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import SetList from "./components/SetList";
 import './App.css';
 import axios from "axios";
@@ -38,7 +38,10 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <SetList sets={this.state.sets} />
+                <br/>
+                <input type="text"/>
+                <button>Legg til sett</button>
+                <SetList sets={this.state.sets}/>
             </div>
         );
     }
