@@ -40,7 +40,7 @@ class App extends Component {
             <div className="App">
                 <br/>
                 <input type="text"/>
-                <button>Legg til sett</button>
+                <button>Legg til nytt sett</button>
                 <SetList sets={this.state.sets}/>
             </div>
         );
