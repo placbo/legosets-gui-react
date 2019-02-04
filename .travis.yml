@@ -12,5 +12,5 @@ deploy:
   skip_cleanup: true
   domain: my-lego-sets.surge.sh
   project: ./build/
-on:s
+on:
   branch: master
