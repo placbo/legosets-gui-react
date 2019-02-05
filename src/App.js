@@ -20,15 +20,8 @@ class App extends Component {
         axios
             .get("https://mylegosets-api.herokuapp.com/api/sets")
             .then(response => {
-                const newSets = response.data.map(c => {
-                    return {
-                        id: c._id,
-                        setid: c.setid
-                    };
-                });
-                // create a new "State" object without mutating the original State object.
                 const newState = Object.assign({}, this.state, {
-                    sets: newSets
+                    sets: response.data
                 });
                 this.setState(newState);
             })
