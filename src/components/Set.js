@@ -6,7 +6,7 @@ function Set(props) {
     return (
         <div className="set">
             {"setDataFromRebrickable" in props.setData ? (
-                <a target="_blank" href={props.setData.setDataFromRebrickable.set_url}>
+                <a target="_blank" rel="noopener noreferrer" href={props.setData.setDataFromRebrickable.set_url}>
                     <img alt="legoimage" src={props.setData.setDataFromRebrickable.set_img_url}/>
                 </a>
             ) : (
