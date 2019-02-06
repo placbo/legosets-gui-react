@@ -1,18 +1,18 @@
 import React from "react";
-import PropTypes from "prop-types";
 import "./Set.css";
 
 function Set(props) {
+    // const hasRebrickableData = "setDataFromRebrickable" in props.setData;
     return (
         <div className="set">
-            <img alt="legoimage" src="https://via.placeholder.com/100"/>
-            <div>{props.setid}</div>
+            {"setDataFromRebrickable" in props.setData? (
+                    <img alt="legoimage" src={props.setData.setDataFromRebrickable.set_img_url}/>
+                ) : (
+                    <img alt="legoimage" src="https://via.placeholder.com/100"/>
+                )}
+            <div>{props.setData.setid}</div>
         </div>
     );
 }
-
-Set.propTypes = {
-    setid: PropTypes.string.isRequired
-};
 
 export default Set;

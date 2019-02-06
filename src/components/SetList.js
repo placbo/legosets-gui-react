@@ -7,7 +7,7 @@ import Set from "./Set";
 
 function SetList(props) {
   return (
-    <div className="setlist">{props.sets.map(c => <Set key={c._id} setid={c.setid} />)}</div>
+    <div className="setlist">{props.sets.map(setData => <Set key={setData._id} setData={setData} />)}</div>
   );
 }
 
