@@ -1,16 +1,15 @@
 .set {
-  margin: 10px;
-  padding: 10px;
-  width: 120px;
-  height: 120px;
+  margin: 4px;
+  padding: 4px;
+  height: 160px;
   /*border: 1px solid #bbb;*/
   background-color: #eee;
-  font-size: 1.2em;
+  font-size: 1em;
   text-decoration: none;
   color: #333;
 }
 
 .set img {
-  max-height: 100px;
-  max-width: 100px;
+  max-height: 150px;
+  max-width: 150px;
 }
