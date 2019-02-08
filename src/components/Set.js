@@ -15,11 +15,9 @@ function Set(props) {
             });
     }
 
-
-    // const hasRebrickableData = "setDataFromRebrickable" in props.setData;
     return (
         <div className="set">
-            {"setDataFromRebrickable2" in props.setData ? (
+            {"setDataFromRebrickable" in props.setData ? (
                 <a target="_blank" rel="noopener noreferrer" href={props.setData.setDataFromRebrickable.set_url}>
                     <img alt="legoimage" src={props.setData.setDataFromRebrickable.set_img_url}/>
                 </a>
