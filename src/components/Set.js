@@ -4,6 +4,8 @@ import "./Set.css";
 
 function Set(props) {
 
+    const localhost = true;
+
     function deleteSet(e) {
         e.preventDefault();
         axios.delete("https://mylegosets-api.herokuapp.com/api/sets/" + props.setData._id)
@@ -18,7 +20,11 @@ function Set(props) {
 
     return (
         <div className="set">
-            <img alt="legoimage" src={"https://images.brickset.com/sets/small/" + props.setData.setid + "-1.jpg"}/>
+            {!localhost ? (
+                <img alt="legoimage" src={"https://images.brickset.com/sets/small/" + props.setData.setid + "-1.jpg"}/>
+            ) : (
+                <img alt=" legoimage" src=" https://via.placeholder.com/100"/>
+            )}
             <div>{props.setData.setid}</div>
             <a href="#/" onClick={deleteSet}>Delete</a><br/>
             <a href={"https://brickset.com/sets/" + props.setData.setid + "-1"}>Brickset</a><br/>
