@@ -18,14 +18,15 @@ class App extends Component {
 
     componentDidMount() {
 
-
-        axios
-            .get("https://brickset.com/api/v2.asmx/getSets?apiKey=idQo-dSiu-aZK4&userHash=937816394103724&query=75884&theme=&setNumber=&year=&owned=&wanted=&orderBy=&pageSize=&pageNumber=&userName=&subtheme=")
-            .then(response => {
-                console.log(response);
-            })
-            .catch(error => console.log(error));
-
+        // axios
+        //     .get(
+        //         "https://brickset.com/api/v2.asmx/getSets?apiKey=idQo-dSiu-aZK4&userHash=937816394103724&query=75884&theme=&setNumber=&year=&owned=&wanted=&orderBy=&pageSize=&pageNumber=&userName=&subtheme="
+        //     )
+        //     .then(response => {
+        //         console.log(response);
+        //     })
+        //     .catch(error => console.log(error));
+        //
 
         axios
             .get("https://mylegosets-api.herokuapp.com/api/sets")

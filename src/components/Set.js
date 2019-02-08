@@ -9,6 +9,7 @@ function Set(props) {
         axios.delete("https://mylegosets-api.herokuapp.com/api/sets/" + props.setData._id)
             .then(result => {
                 console.log("Set with id " + props.setData._id + " deleted");
+                //delete from sets as well
             })
             .catch(err => {
                 console.error(err);
@@ -17,15 +18,11 @@ function Set(props) {
 
     return (
         <div className="set">
-            {"setDataFromRebrickable" in props.setData ? (
-                <a target="_blank" rel="noopener noreferrer" href={props.setData.setDataFromRebrickable.set_url}>
-                    <img alt="legoimage" src={props.setData.setDataFromRebrickable.set_img_url}/>
-                </a>
-            ) : (
-                <img alt="legoimage" src="https://via.placeholder.com/100"/>
-            )}
+            <img alt="legoimage" src={"https://images.brickset.com/sets/small/" + props.setData.setid + "-1.jpg"}/>
             <div>{props.setData.setid}</div>
-            <a href="#/" onClick={deleteSet}>Delete</a>
+            <a href="#/" onClick={deleteSet}>Delete</a><br/>
+            <a href={"https://brickset.com/sets/" + props.setData.setid + "-1"}>Brickset</a><br/>
+            <a href={"https://rebrickable.com/sets/" + props.setData.setid + "-1"}>Rebrickable</a>
         </div>
     );
 }
