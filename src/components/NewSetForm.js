@@ -16,22 +16,12 @@ class NewSetForm extends React.Component {
 
     handleSubmit = event => {
         event.preventDefault();
-
-
         const headers = {
             'Content-Type': 'application/json'
         };
         const setDataToSave = {
             setid: this.state.setNumberSearchTerm
         };
-
-        // axios
-        //     .get("https://rebrickable.com/api/v3/lego/sets/" + this.state.setNumberSearchTerm + "-1/?key=ae1adef6af140d472e0ee016a8b2171c")
-        //     .then(response => {
-        //         if (response.data) {
-        //             const mySetData = Object.assign({}, setDataToSave, {
-        //                 "setDataFromRebrickable": response.data
-        //             });
         axios
             .post("https://mylegosets-api.herokuapp.com/api/sets", setDataToSave, headers)
             .then(response => {
@@ -39,24 +29,19 @@ class NewSetForm extends React.Component {
                 this.setState({setNumberSearchTerm: ''}); //nullstiller formen
             })
             .catch(error => console.log(error));
-    // }
-    // })
-    // .catch(error => console.log(error));
+    };
 
-};
-
-render()
-{
-    return (
-        <form onSubmit={this.handleSubmit}>
-            <label>
-                Set number:
-                <input type="text" value={this.state.setNumberSearchTerm} onChange={this.handleChange}/>
-            </label>
-            <input type="submit" value="Legg til"/>
-        </form>
-    );
-}
+    render() {
+        return (
+            <form onSubmit={this.handleSubmit}>
+                <label>
+                    Set number:
+                    <input type="text" value={this.state.setNumberSearchTerm} onChange={this.handleChange}/>
+                </label>
+                <input type="submit" value="Legg til"/>
+            </form>
+        );
+    }
 }
 
 export default NewSetForm;
