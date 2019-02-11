@@ -21,7 +21,7 @@ function Set(props) {
             <a href="#/">
                 <div className="menu">...</div>
             </a>
-            {process.env.SHOW_IMAGES ? (
+            {process.env.NODE_ENV==="production" ? (
                 <img alt="legoimage" src={"https://images.brickset.com/sets/small/" + props.setData.setid + "-1.jpg"}/>
             ) : (
                 <img alt=" legoimage" src=" https://via.placeholder.com/100"/>
