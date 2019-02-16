@@ -1,27 +1,34 @@
 import React from "react";
-//import axios from "axios";
+import axios from "axios";
 import "./Set.css";
+
+import {FaRegTrashAlt} from 'react-icons/fa';
 
 function Set(props) {
 
-/*    function deleteSet(e) {
+    function deleteSet(e) {
         e.preventDefault();
-        axios.delete("https://mylegosets-api.herokuapp.com/api/sets/" + props.setData._id)
-            .then(result => {
-                console.log("Set with id " + props.setData._id + " deleted");
-                //delete from sets as well
-            })
-            .catch(err => {
-                console.error(err);
-            });
-    }*/
+        let shouldDelete = window.confirm("Really delete ?");
+        if (shouldDelete) {
+            axios.delete("https://mylegosets-api.herokuapp.com/api/sets/" + props.setData._id)
+                .then(result => {
+                    console.log("Set with id " + props.setData._id + " deleted");
+                    //TODO: delete from sets as well
+                })
+                .catch(err => {
+                    console.error(err);
+                });
+        }
+    }
 
     return (
         <div className="set">
-            <a href="#/">
-                <div className="menu">...</div>
+            <a href="#/" onClick={deleteSet}>
+                <div className="menu">
+                    <div class="actionIcon"><FaRegTrashAlt/></div>
+                </div>
             </a>
-            {process.env.NODE_ENV==="production" ? (
+            {process.env.NODE_ENV === "production" ? (
                 <img alt="legoimage" src={"https://images.brickset.com/sets/small/" + props.setData.setid + "-1.jpg"}/>
             ) : (
                 <img alt=" legoimage" src=" https://via.placeholder.com/100"/>

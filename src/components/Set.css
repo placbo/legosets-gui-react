@@ -17,13 +17,27 @@
     border-radius: 50%;
 }
 
+.set:hover .menu{
+    visibility: visible;
+}
+
+
+.set .menu .actionIcon{
+    margin-top:5px;
+    margin-left:1px;
+    color:#888888;
+}
+
+.set .menu:hover .actionIcon{
+    color:#000000;
+}
+
+
 .setNumber{
     font-weight: 700;
 }
 
-.set:hover .menu{
-    visibility: visible;
-}
+
 
 a {
     color: #222222;
