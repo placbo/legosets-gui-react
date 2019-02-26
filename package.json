@@ -28,6 +28,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "react-router-dom": "^4.3.1",
     "terser": "^3.14.1"
   }
 }
