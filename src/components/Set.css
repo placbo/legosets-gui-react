@@ -4,6 +4,7 @@
     text-decoration: none;
     height: 200px;
     position: relative;
+    //TODO: relativ posisjonering skaper trøbbel i headeren
 }
 
 .set .menu{

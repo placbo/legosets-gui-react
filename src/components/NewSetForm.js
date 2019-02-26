@@ -36,7 +36,7 @@ class NewSetForm extends React.Component {
             <form onSubmit={this.handleSubmit}>
                 <label>
                     Set number:
-                    <input type="text" value={this.state.setNumberSearchTerm} onChange={this.handleChange}/>
+                    <input type="text" name="addSet" value={this.state.setNumberSearchTerm} onChange={this.handleChange}/>
                 </label>
                 <input type="submit" value="Legg til"/>
             </form>
