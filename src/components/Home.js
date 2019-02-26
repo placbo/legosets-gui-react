@@ -39,7 +39,7 @@ class Home extends Component {
                 ) : (
                     <iframe title="waiter gif" src="https://giphy.com/embed/8Bv8MBkdjnPKB6r59o"
                             width="200" height="200" frameBorder="0"
-                            className="giphy-embed" allowFullScreen></iframe>
+                            className="giphy-embed" allowFullScreen/>
                 )}
                 <p>
                     <small>Application running in <b>{process.env.NODE_ENV}</b> mode.</small>

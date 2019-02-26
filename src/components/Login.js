@@ -1,8 +1,9 @@
 import React from "react";
 import axios from "axios";
-import { instanceOf } from 'prop-types';
+import {Redirect} from "react-router-dom";
+import {withCookies, Cookies} from 'react-cookie';
+import {instanceOf} from 'prop-types';
 import './Login.css';
-import { withCookies, Cookies } from 'react-cookie';
 
 
 class Login extends React.Component {
@@ -13,13 +14,16 @@ class Login extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {disabled: false};
+        this.state = {
+            disabled: false,
+            toHomeScreen: false
+        };
         this.handleChange = this.handleChange.bind(this);
     }
 
     handleChange(event) {
         if (event.target.value.length > 3) {
-            this.setState( {disabled: !this.state.disabled} );
+            this.setState({disabled: true});
             const headers = {
                 'Content-Type': 'application/json'
             };
@@ -30,21 +34,31 @@ class Login extends React.Component {
                 .post("https://mylegosets-api.herokuapp.com/login", load, headers)
                 .then(response => {
                     console.log(response);
-                    if (response.data.token){
-                        const { cookies } = this.props;
-                        cookies.set('token', response.data.token, { path: '/' });
+                    if (response.data.token) {
+                        const {cookies} = this.props;
+                        cookies.set('token', response.data.token, {path: '/'});
+                        this.setState(() => ({
+                            toHomeScreen: true
+                        }));
                     }
                 })
-                .catch(error => console.log(error));
+                .catch(error => {
+                    alert("Feil kode, dust!");
+                    this.setState({disabled: false});
+                });
         }
     }
 
     render() {
+        if (this.state.toHomeScreen === true) {
+            return <Redirect to='/'/>
+        }
         return (
             <div className="login">
                 <p>Login</p>
                 <form>
-                    <input disabled={this.state.disabled} type="password" name="legosetsapipassword" autoComplete="off" size="4"
+                    <input disabled={this.state.disabled} type="password" name="legosetsapipassword" autoComplete="off"
+                           size="4"
                            onChange={this.handleChange}/>
                 </form>
             </div>

@@ -2,19 +2,33 @@ import React from "react";
 import {Link} from 'react-router-dom';
 import './Header.css';
 
+class Header extends React.Component {
 
-function Header(props) {
+    constructor(props) {
+        super(props);
+        this.state = {
+            isAuthenticated: false,
+        };
+    }
 
-    return (
-        <header>
-            <nav>
-                <ul>
-                    <li><Link to='/'>Home</Link></li>
-                    <li className="rightMenuItem"><Link to='/login'>Login</Link></li>
-                </ul>
-            </nav>
-        </header>
-    );
+    render() {
+        return (
+            <header>
+                <nav>
+                    <ul>
+                        <li><Link to='/'>Home</Link></li>
+                        {this.state.isAuthenticated ? (
+                            <li className="rightMenuItem"><Link to='/'>Log out (not working)</Link></li>
+                        ) : (
+                            <li className="rightMenuItem"><Link to='/login'>Log in</Link></li>
+                        )}
+
+                    </ul>
+                </nav>
+            </header>
+        );
+    }
+
 }
 
 export default Header;
