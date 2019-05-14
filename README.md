@@ -1,3 +1,16 @@
+## MyLegoSets GUI (react)
+
+MyLegoSets is a small webapp for storing a single persons legosets. The app is written i React and uses a rest-api (https://github.com/placbo/mylegosets-api)
+
+It is deployed on surge.sh (http://my-lego-sets.surge.sh/) using Travis CI.  
+
+Pincode for testing is 1234
+
+Surge: Static web publishing for Front-End Developers  
+Travis CI: a hosted continuous integration service used to build and test software projects hosted at GitHub.
+
+-------------------------------------------------------------
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
