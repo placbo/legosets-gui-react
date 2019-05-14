@@ -1,6 +1,8 @@
 ## MyLegoSets GUI
 
-MyLegoSets is a small webapp for storing a single persons lego sets. The app is written i React and uses a Rest API (https://github.com/placbo/mylegosets-api).
+MyLegoSets is a small webapp for storing a single persons lego sets. 
+
+This project contains the GUI written in React. For backend functionality, it uses a Rest API : https://github.com/placbo/mylegosets-api. 
 
 It is deployed on surge.sh (http://my-lego-sets.surge.sh/) using Travis CI.  
 
